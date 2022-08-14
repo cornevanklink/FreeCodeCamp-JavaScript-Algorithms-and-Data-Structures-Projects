@@ -4,5 +4,5 @@ The description of the FreeCodeCamp-projects can be found [here](https://www.fre
 - [x] Palindrome Checker
 - [x] Roman Numeral Converter
 - [x] Caesars Cipher
-- [ ] Telephone Number Validation
 - [ ] Cash Register
+- [ ] Telephone Number Validation

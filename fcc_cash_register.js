@@ -1,4 +1,4 @@
-/*
+/* FreeCodeCamp Cash Register
 Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
 
 cid is a 2D array listing available currency.
@@ -38,30 +38,29 @@ See below for an example of a cash-in-drawer array:
 */
 
 var result = {
-  "status": "",
-  "change": []
-}
+  status: "",
+  change: [],
+};
 
 function checkCashRegister(price, cash, cid) {
-  
-  if(price == cash){
+  if (price == cash) {
     result.status = "CLOSED";
 
+    console.log(result);
     return result;
   }
 
   var change = cash - price;
-  console.log(change);
+  console.log("The change should be " +change);
 
-  for(const x of cid){
+  for (const x of cid) {
+    if (x[1] > 0.5){
+      x[1] -= 0.5;
+    }
     console.log(x);
   }
 
-
-
   return change;
-  
-  
 }
 
 checkCashRegister(19.5, 20, [
