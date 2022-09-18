@@ -43,18 +43,36 @@ var result = {
 };
 
 function checkCashRegister(price, cash, cid) {
+  var dif = price - cash;
+
+  switch (dif) {
+    case 0:
+      result.status = "CLOSED";
+      console.log(result);
+      return result;
+    case dif>0:
+      console.log("Dif bigger than 0");
+      break;
+    case dif<0:
+      console.log("Dif smaller than 0");
+      break;
+
+    default:
+      break;
+  }
+
   if (price == cash) {
     result.status = "CLOSED";
 
     console.log(result);
     return result;
+  } else {
+    var change = cash - price;
+    console.log("The change should be " + change);
   }
 
-  var change = cash - price;
-  console.log("The change should be " +change);
-
   for (const x of cid) {
-    if (x[1] > 0.5){
+    if (x[1] > 0.5) {
       x[1] -= 0.5;
     }
     console.log(x);
@@ -63,7 +81,7 @@ function checkCashRegister(price, cash, cid) {
   return change;
 }
 
-checkCashRegister(19.5, 20, [
+checkCashRegister(21, 20, [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
   ["DIME", 3.1],
